@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,9 +15,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('snake');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/leaderboard', [UsersController::class, 'index']);
